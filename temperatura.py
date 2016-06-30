@@ -12,12 +12,6 @@ fg = Dataset(percorso, "r")
 atmc = fg.groups["atmospheric_components"]
 t = atmc.variables['T']
 temp = np.array(t)
-medie = []
-n_fov = temp.shape[0]
-somma= 0
-n_al = temp.shape[1]
-for i in range(n_fov):
-	somma += temp[i, :]
-medie=somma/n_fov
+medie = np.mean(temp, axis=0)
 print(medie)
 fg.close()
