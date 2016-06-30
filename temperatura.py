@@ -16,12 +16,8 @@ medie = []
 n_fov = temp.shape[0]
 somma= 0
 n_al = temp.shape[1]
-for i in range(n_al):
-	for j in range(n_fov):
-		somma += temp[j, i]
-	somma = somma/n_fov
-	medie.append(somma)
-	somma=0
-	j = 0
+for i in range(n_fov):
+	somma += temp[i, :]
+medie=somma/n_fov
 print(medie)
 fg.close()
